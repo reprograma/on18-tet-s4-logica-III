@@ -64,3 +64,24 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+  //Deve buscar o título do filme (conteúdo)
+  //Para isso, precisamos selecionar especificamente para buscar apenas os values de especificamente, de título
+  //Depois de puxar os conteúdos, precisa dar comando FIND
+
+  //object.value
+
+
+function Buscador(buscador){
+  let posicao
+for (let item of filmes){
+  if (buscador.toLowerCase() == (valores = Object.values(item)[0].toLowerCase())){
+    posicao = filmes.indexOf(item)
+    console.table(item)
+    console.log(["---","Posição do filme: "+posicao,"---"])
+  };
+}
+}
+
+Buscador("Homem-Aranha: Sem Volta para Casa")
+Buscador("suspiria")
