@@ -68,7 +68,7 @@ let filmes = [
   },
 ];
 
-let listarGeneros = () => {
+const listarGeneros = () => {
   let generos = new Set();
   for (let filme of filmes) {
     typeof filme.genero === "string"
@@ -78,11 +78,11 @@ let listarGeneros = () => {
   return generos;
 };
 
-let generos = listarGeneros();
+const generos = listarGeneros();
 
 // console.log(generos);
 
-let procurar = (termo) => {
+const procurar = (termo) => {
   termo = termo.toLowerCase();
   if (generos.has(termo)) {
     let retorno = [];
