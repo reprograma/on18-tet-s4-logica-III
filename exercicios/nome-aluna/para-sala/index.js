@@ -45,10 +45,10 @@ function imprimirNota(quantidadeDeProdutos) {
   let dataDaCompra = new Date()
 
   let notaFiscal = {
-    'Valor Total': `R$${valorTotal.toFixed(2).replace('.', ',')}`,
-    'Desconto Aplicado': `R$${descontoAplicado.toFixed(2).replace('.', ',')}`,
-    'Valor à pagar': `R$${valorFinal.toFixed(2).replace('.', ',')}`,
-    'Data da Compra': dataDaCompra.toLocaleDateString('pt-BR', {
+     'Valor Total' : `R$${valorTotal.toFixed(2).replace('.', ',')}`,
+     'Desconto Aplicado' : `R$${descontoAplicado.toFixed(2).replace('.', ',')}`,
+    'Valor à pagar' : `R$${valorFinal.toFixed(2).replace('.', ',')}`,
+    'Data da Compra' : dataDaCompra.toLocaleDateString('pt-BR', {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric'
