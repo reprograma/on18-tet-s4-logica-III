@@ -64,3 +64,26 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+  function filtrarFilmesTitulo(titulo) {
+    for (let filme of filmes) {
+        let buscaTitulo = filmes.find((filme) => filme.titulo.toUpperCase().includes(titulo.toUpperCase())); {
+        }
+        console.table(buscaTitulo.titulo)
+        break;
+    }
+
+}
+
+function filtrarFilmesGenero(genero) {
+    for (let filme of filmes) {
+        let buscaGenero = filmes.filter((filme) => filme.genero.includes(genero.toUpperCase()) || filme.genero[0].toUpperCase().includes(genero.toUpperCase()) || filme.genero[1].toUpperCase().includes(genero.toUpperCase())); {
+        }
+        console.table(buscaGenero)
+        break;
+    }
+}
+
+
+filtrarFilmesGenero("romance");
+filtrarFilmesTitulo("amo");
