@@ -64,3 +64,24 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+ 
+ let nomeDoFilme = "ca"
+ const encontrarTitulo = filmes.filter((item) => item.titulo.toLowerCase().includes(nomeDoFilme.toLocaleLowerCase()));
+ console.table(encontrarTitulo) 
+
+  console.log("====================================================")
+  
+
+let nomeDoGenero = "suspense"
+
+  const encontrarGenero = filmes.filter(
+    (item) => {
+      if(Array.isArray(item.genero)){
+       let generoEncontrado = item.genero.find(genero => genero.includes(nomeDoGenero))
+        return generoEncontrado
+      }
+      item.genero.includes(nomeDoGenero)
+    } 
+    )
+  console.table (encontrarGenero)
+  
