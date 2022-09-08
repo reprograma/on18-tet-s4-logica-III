@@ -1,4 +1,4 @@
-let lista=new Array(1,2,3,4,5)
+let lista=new Array(1,2,3,4,5,6)
 
 // let encontrar=lista.find((elemento)=>{
 //     elemento==5
