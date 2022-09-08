@@ -84,6 +84,5 @@ function filtrarFilmesGenero(genero) {
     }
 }
 
-
 filtrarFilmesGenero("romance");
 filtrarFilmesTitulo("amo");
