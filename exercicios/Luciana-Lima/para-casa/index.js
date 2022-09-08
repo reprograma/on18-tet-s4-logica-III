@@ -90,7 +90,7 @@ let filmes = [
   }
 
   
-
+//
 
   buscaPorNome("us")
   buscaPorTrechoGenero("terr")
