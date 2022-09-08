@@ -29,3 +29,4 @@ console.log(tecnologias[1])
 // console.log()
 
 
+console.log(times[0])
