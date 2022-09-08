@@ -64,3 +64,40 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+  function buscaFilme(nome, genero) {
+    if( nome != null && genero != null ) {
+      const filme = filmes.find( filme => filme.titulo === nome);
+      if( !filme ) return null;
+      if( Array.isArray(filme.genero) ){
+        return filme.genero.includes(genero) ? filme : null;
+      } else {
+        return filme.genero == genero ? filme : null;
+      }
+    }
+
+    if( nome != null ) {
+      return filmes.find( filme => filme.titulo === nome );
+    }
+
+    if( genero != null ) {
+      return filmes.filter( filme => {
+        if( Array.isArray(filme.genero) ){
+          return filme.genero.includes(genero);
+        } else {
+          return filme.genero == genero;
+        }
+      } );
+    }
+
+    return null;
+  }
+
+  const res1 = buscaFilme("Homem-Aranha: Sem Volta para Casa", undefined);
+  const res2 = buscaFilme("Colonia", "ação");
+  const res3 = buscaFilme("Colonia", "suspense");
+  const res4 = buscaFilme(undefined, "sci-fi");
+  console.log(res1);
+  console.log(res2);
+  console.log(res3);
+  console.log(res4);
