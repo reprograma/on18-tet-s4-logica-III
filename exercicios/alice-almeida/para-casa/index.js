@@ -100,9 +100,9 @@ class Programa {
       let retorno = [];
       for (let filme of filmes) {
         typeof filme.genero === "string"
-          ? filme.genero === termo && retorno.push(filme)
+          ? filme.genero.toLowerCase() === termo && retorno.push(filme)
           : filme.genero.forEach(
-              (genero) => genero === termo && retorno.push(filme)
+              (genero) => genero.toLowerCase() === termo && retorno.push(filme)
             );
       }
       return retorno;
