@@ -63,4 +63,26 @@ let filmes = [
     titulo: "Homem-Aranha: Sem Volta para Casa",
     genero: ["ação", "aventura"],
     ano: "2021", 
-  }] 
+  }]
+
+  let pesquisaPorTitulo = ['Corpo Elétrico']
+  let pesquisaPorGenero = ['terror']
+
+
+// Pesquisa por titulo (retorno único)
+
+function pesquisarFilmesTitulo(titulo) {
+ for (let filme of filmes) {
+     let encontraPorTitulo = filmes.find(filme => filme.titulo == pesquisaPorTitulo);
+console.log("Pesquisa por titulo:", encontraPorTitulo.titulo)
+  break;
+}
+}
+pesquisarFilmesTitulo(pesquisaPorTitulo)
+console.log("---------------------------------------------------")
+
+// // Pesquisa por gênero (retorno em lista)
+
+ let encontraPorGenero = filmes.filter((filme) => filme.genero == pesquisaPorGenero);
+ console.log("Pesquisa por gênero: "+pesquisaPorGenero, encontraPorGenero)
+ 
