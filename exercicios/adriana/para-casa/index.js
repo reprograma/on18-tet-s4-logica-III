@@ -64,3 +64,16 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+  let filtrarTitulo = filmes.filter(item => item.titulo.toLowerCase().includes("us".toLowerCase()));
+  console.log("Filtrar filmes por título:");
+  console.table(filtrarTitulo);
+
+  let filtrarGenero = filmes.filter(item => new RegExp ("Ave").test(item.genero));
+  console.log("Filtrar filmes por gênero:");
+  console.table(filtrarGenero);
+
+  
+
+  
+
