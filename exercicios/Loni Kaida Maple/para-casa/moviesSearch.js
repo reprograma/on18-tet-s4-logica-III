@@ -80,89 +80,90 @@ let filmes = [
       ano: "1979",
     }] 
 
-
 let inputBusca, inputType, resultadoBusca;
-let temp, tempResult=[];
 
 //0 == titulo/ 1 == genero/ 2 == ano//
-let searchType=0;
+let searchType=2;
+//mude para true se for executar pelo terminal//
 let usarTerminal=false;
 
-inputBusca = "gu";
+inputBusca = "19";
 inputType=["titulo","genero","ano"];
 
 function getMovieByName(){
-    //temp=filmes.titulo;
     let a=filmes;
-    let filtered
-    let c;
-    
+    let c, d;
+    inputBusca=inputBusca.toLowerCase();
     for(b of a){
-      //if(b.titulo.includes("gun"))
-        //console.log(b.titulo);
         c=b.titulo.toLowerCase();
-        if(c.includes(inputBusca))
-        console.log(c);
+        d=b;
+
+        if(c.includes(inputBusca)){
+          console.log("%c [Filme]", 'background: #400080; color: #fcd703');
+          console.log(d.titulo);
+        }
     }
 
 }
 function getMovieByGenre(){
-  //temp=filmes.titulo;
   let a=filmes;
-  let filtered
   let c;
-  
+  inputBusca=inputBusca.toLowerCase();
   for(b of a){
-    //if(b.titulo.includes("gun"))
-      //console.log(b.titulo);
-      c=b.genero.toLowerCase();
-      if(c.includes(inputBusca))
-      console.log(c);
+    //console.log(b)
+      c=b;
+      if(c.genero.includes(inputBusca)){
+        console.log("%c [Filme]", 'background: #400080; color: #fcd703');
+        console.log(c.titulo);
+      }
   }
-
 }
 
 function getMovieByYear(){
-  //temp=filmes.titulo;
   let a=filmes;
-  let filtered
-  let c;
-  
   for(b of a){
-    //if(b.titulo.includes("gun"))
-      //console.log(b.titulo);
-      //c=b.ano.toLowerCase();
-      if(b.includes(inputBusca))
-      console.log(c);
+      if(b.ano.includes(inputBusca)){
+      console.log("%c [Filme]", 'background: #400080; color: #fcd703');
+      console.log(b.titulo);
+    }
   }
 
+}
+
+function callFunctionsByType(){
+  if(searchType==0){
+    getMovieByName();
+  }
+  if(searchType==1){
+    getMovieByGenre();
+  }
+  if(searchType==2){
+    getMovieByYear();
+  }
+  else{
+    getMovieByName();
+  }
 }
 
 if(usarTerminal==false){
-  switch (searchType) {
-    case 0:
-      getMovieByName();
-      break;
-
-    case 1:
-      getMovieByGenre();
-      break;
-  
-    case 2:
-      getMovieByYear();
-      break;
-  
-    default:
-      getMovieByName();
-      break;
-  }
+  callFunctionsByType();
 }
-//getMovieByName();
+if(usarTerminal){
+  const prompt = require('prompt-sync')();
+  console.log("%c [Digite 0 para porcurar por Titulo]", 'background: #400080; color: #9dfdf3');
+  console.log("%c [Digite 1 para porcurar por Genero]", 'background: #01537e; color: #f1e60e');
+  console.log("%c [Digite 2 para porcurar por Ano]", 'background: #400080; color: #d79bff');
+  const uInputType = prompt('Deseja procurar por titulo, genero ou ano?', 'background: #6b5f01; color: #d79bff');
+  console.log(`Você selecionou ${uInputType}`);
+  searchType=uInputType;
+  console.log("%c [Digite o que deseja buscar]", 'background: #400080; color: #9dfdf3');
+  const uInputSearch = prompt('( ⓛ ω ⓛ *)', 'background: #6b5f01; color: #d79bff');
+  console.log(`Você pesquisou por ${uInputSearch}`);
+  inputBusca=uInputSearch;
 
-//const prompt = require('prompt-sync')();
+  callFunctionsByType();
 
-//const name = prompt('What is your name?');
-//console.log(`Hey there ${name}`);
+}
 
 
 //console.log("%c Filmes"+filmes[3].titulo, 'background: #400080; color: #f4a30b');
