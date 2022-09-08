@@ -72,16 +72,7 @@ let filmes = [
   console.log("====================================================")
   
 
-let nomeDoGenero = "suspense"
-
-  const encontrarGenero = filmes.filter(
-    (item) => {
-      if(Array.isArray(item.genero)){
-       let generoEncontrado = item.genero.find(genero => genero.includes(nomeDoGenero))
-        return generoEncontrado
-      }
-      item.genero.includes(nomeDoGenero)
-    } 
-    )
+let nomeDoGenero = "ma"
+  const encontrarGenero = filmes.filter((item) => item.genero.includes(nomeDoGenero))
   console.table (encontrarGenero)
   
