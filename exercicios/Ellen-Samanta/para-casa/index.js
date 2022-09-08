@@ -64,3 +64,54 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+
+  function nomeFilme(nome){
+    console.log('Bem vindo aos filmes Flix')
+    let allFilmesTitulo=nome.toUpperCase()
+
+
+    let filtrando=filmes.filter(filmeNome=>{
+
+
+     
+
+   return filmeNome.titulo.toUpperCase()===allFilmesTitulo
+
+
+     
+    })
+
+    console.log(filtrando)
+
+ 
+    // filmes.forEach(valor=>{
+    //   let incluindo=valor.titulo.toUpperCase;
+      
+    // if(valor.titulo.includes(allFilmesTitulo)) {
+    //   console.log('existe')
+    // }
+    // })
+
+
+  }
+
+
+
+
+  function generoFilme(genero){
+
+    filmes.forEach(filmes=>{
+      for(let Generos of filmes.genero){
+        
+       if( Generos.toUpperCase()===genero.toUpperCase()){
+         console.log(filmes.genero ) 
+       }
+    
+        
+      }
+      
+
+  })}
+
+  generoFilme('ação')
