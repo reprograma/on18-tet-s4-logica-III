@@ -68,52 +68,59 @@ let filmes = [
   },
 ];
 
-const listarGeneros = () => {
-  let generos = new Set();
-  for (let filme of filmes) {
-    typeof filme.genero === "string"
-      ? generos.add(filme.genero.toLowerCase())
-      : filme.genero.forEach((genero) => generos.add(genero.toLowerCase()));
+class Programa {
+  constructor(listaFilmes) {
+    this.generos = this.listarGeneros();
+    this.readline = require("readline").createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
   }
-  return generos;
-};
 
-const generos = listarGeneros();
+  rodar() {
+    console.log(
+      "Pesquisa por filme ou gênero (digite exit ou ctrl+c para sair)"
+    );
+    this.perguntar();
+  }
 
-// console.log(generos);
-
-const procurar = (termo) => {
-  termo = termo.toLowerCase();
-  if (generos.has(termo)) {
-    let retorno = [];
+  listarGeneros() {
+    let generos = new Set();
     for (let filme of filmes) {
       typeof filme.genero === "string"
-        ? filme.genero === termo && retorno.push(filme)
-        : filme.genero.forEach(
-            (genero) => genero === termo && retorno.push(filme)
-          );
+        ? generos.add(filme.genero.toLowerCase())
+        : filme.genero.forEach((genero) => generos.add(genero.toLowerCase()));
     }
-    return retorno;
-  } else {
-    for (let filme of filmes) {
-      if (filme.titulo.toLowerCase().includes(termo)) return filme;
+    return generos;
+  }
+
+  procurar(termo) {
+    termo = termo.toLowerCase();
+    if (this.generos.has(termo)) {
+      let retorno = [];
+      for (let filme of filmes) {
+        typeof filme.genero === "string"
+          ? filme.genero === termo && retorno.push(filme)
+          : filme.genero.forEach(
+              (genero) => genero === termo && retorno.push(filme)
+            );
+      }
+      return retorno;
+    } else {
+      for (let filme of filmes) {
+        if (filme.titulo.toLowerCase().includes(termo)) return filme;
+      }
     }
   }
-};
 
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+  perguntar() {
+    this.readline.question("Pequisar: ", (termo) => {
+      termo === "exit" && exit();
+      console.log(this.procurar(termo));
+      this.perguntar();
+    });
+  }
+}
 
-console.log("Pesquisar (digite exit ou ctrl+c para sair)");
-
-const perguntar = () => {
-  readline.question("Pequisar: ", (termo) => {
-    termo === "exit" && exit();
-    console.log(procurar(termo));
-    perguntar();
-  });
-};
-
-perguntar();
+const programa = new Programa(filmes);
+programa.rodar();
