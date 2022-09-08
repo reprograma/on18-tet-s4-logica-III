@@ -85,4 +85,4 @@ console.log("---------------------------------------------------")
 
  let encontraPorGenero = filmes.filter((filme) => filme.genero == pesquisaPorGenero);
  console.log("Pesquisa por gênero: "+pesquisaPorGenero, encontraPorGenero)
-
+ 
