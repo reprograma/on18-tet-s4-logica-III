@@ -64,3 +64,20 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+function buscarFilmesPorTitulo(titulo) {
+
+ let pesquisaPorTitulo = filmes.filter((item) => item.titulo.toLowerCase().includes(titulo.toLowerCase()))
+
+console.log(pesquisaPorTitulo);
+}
+
+function buscarFilmesPorGenero(genero) {
+  let pesquisaPorGenero = filmes.filter((item) => item.genero.includes(genero.toLowerCase()) || item.genero[0].toLowerCase().includes(genero.toLowerCase()) || item.genero[1].toLowerCase().includes(genero.toLowerCase()))
+
+console.log(pesquisaPorGenero);
+}
+
+
+buscarFilmesPorTitulo("hom")
+buscarFilmesPorGenero("dram")
