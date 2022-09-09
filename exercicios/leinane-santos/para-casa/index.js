@@ -72,8 +72,8 @@ function pesquisarFilme(titulo){
 }    
 
 function pesquisaGenero(genero){  
-  const catalago = filmes.filter((item) => item.genero.includes(genero)); 
-  // || item.genero[0].includes(genero));
+  const catalago = filmes.filter((item) => item.genero.includes(genero.toUpperCase())); 
+
   console.table(catalago)
 }
 
