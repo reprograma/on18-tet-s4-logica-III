@@ -64,3 +64,26 @@ let filmes = [
     genero: ["ação", "aventura"],
     ano: "2021", 
   }] 
+
+
+
+  function buscaPorNome(filmeProcurado){
+    
+    let encontraFilme= filmes.filter((filmes)=>filmes.titulo.includes (filmeProcurado));
+    
+    console.log(encontraFilme)
+  }
+
+  function buscaPorTrechoGenero(generoProcurado){
+    let encontraPorTrecho = filmes.filter((item)=> item.genero.includes(generoProcurado));
+    console.log(encontraPorTrecho)
+  }
+
+  
+//
+
+  buscaPorNome("Homem-Aranha")
+  buscaPorNome("Corpo Elétrico")
+  buscaPorTrechoGenero("suspense")
+  buscaPorTrechoGenero("sci-fi")
+  buscaPorTrechoGenero("drama")
