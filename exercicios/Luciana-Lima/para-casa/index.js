@@ -1,4 +1,4 @@
-/*let filmes = [
+let filmes = [
   {
     titulo: "us",
     genero: "terror",
@@ -63,24 +63,14 @@
     titulo: "Homem-Aranha: Sem Volta para Casa",
     genero: ["ação", "aventura"],
     ano: "2021", 
-  }] */
-
-let filmes = [
-  {
-    titulo: "us",
-    genero: "terror",
-    ano: "2019", 
-  },
-  {
-    titulo: "transformers: O Lado Oculto da Lua",
-    genero: ["ação", "sci-fi"],
-    ano: "2011", 
-  }]
+  }] 
 
 
 
   function buscaPorNome(filmeProcurado){
-    let encontraFilme = filmes.filter((filmes)=>filmes.titulo == filmeProcurado);
+    
+    let encontraFilme= filmes.filter((filmes)=>filmes.titulo.includes (filmeProcurado));
+    
     console.log(encontraFilme)
   }
 
@@ -92,5 +82,8 @@ let filmes = [
   
 //
 
-  buscaPorNome("us")
-  buscaPorTrechoGenero("terr")
+  buscaPorNome("Homem-Aranha")
+  buscaPorNome("Corpo Elétrico")
+  buscaPorTrechoGenero("suspense")
+  buscaPorTrechoGenero("sci-fi")
+  buscaPorTrechoGenero("drama")
