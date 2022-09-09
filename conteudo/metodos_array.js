@@ -51,37 +51,37 @@
 
 //OUTROS MÉTODOS DE ARRAY
 
-const numeros = [3, 2, 4, 3, 5, 1, 3, 4, 2];
-const outros = [7, 9, 6, 12, 18, 3, 19]
+//const numeros = [3, 2, 4, 3, 5, 1, 3, 4, 2];
+//const outros = [7, 9, 6, 12, 18, 3, 19]
 
 //concat
 
-let arrayConcatenada = numeros.concat([7, 9, 6], [12, 18, 3], 19)
-let outraArrayConcatenada = numeros.concat(outros)
+//let arrayConcatenada = numeros.concat([7, 9, 6], [12, 18, 3], 19)
+//let outraArrayConcatenada = numeros.concat(outros)
 
 // console.log(arrayConcatenada)
 // console.log(numeros)
 
 //push
-let adicionaNoFinal = numeros.push(7, 9 ,21)
+//let adicionaNoFinal = numeros.push(7, 9 ,21)
 // console.log('retorno push', adicionaNoFinal)
 // console.log('push', numeros)
 
-let removeOUltimo = numeros.pop()
+//let removeOUltimo = numeros.pop()
 // console.log('retorno pop', removeOUltimo)
 // console.log('pop', numeros)
 
-let removeOPrimeiro = numeros.shift()
+//let removeOPrimeiro = numeros.shift()
 // console.log('retorno shift', removeOPrimeiro)
 // console.log('shift', numeros)
 
-let adicionaNoInicio = numeros.unshift(36, 28)
+//let adicionaNoInicio = numeros.unshift(36, 28)
 // console.log('retorno unshift', adicionaNoInicio)
 // console.log('unshift', numeros)
 
 // [36, 28, 2, 4, 3, 5, 1, 3, 4, 2, 7, 9]
 
-let copiaUmaParte = numeros.slice(2, 8)
+//let copiaUmaParte = numeros.slice(2, 8)
 // console.log(copiaUmaParte)
 // console.log('slice', numeros)
 // console.log('-------------------------------------------')
@@ -90,24 +90,24 @@ let copiaUmaParte = numeros.slice(2, 8)
 // console.log('splice', numeros)
 
 // splice(indiceInicial, quantidadeARemover, ...ElementosAAdicionar)
-let removeQualquerElementos2 = numeros.splice(2, 0, 100, 200, 999)
+//let removeQualquerElementos2 = numeros.splice(2, 0, 100, 200, 999)
 // console.log(removeQualquerElementos2)
 // console.log('splice', numeros)
 
 // [36, 28, 100, 200, 999, 2, 4, 3, 5, 1, 3, 4, 2, 7, 9]
 
-let localizaElemento = numeros.indexOf(3)
-console.log('indexOf', localizaElemento)
+//let localizaElemento = numeros.indexOf(3)
+//console.log('indexOf', localizaElemento)
 
-let verificaSeExiste = numeros.includes(200)
-console.log('includes', verificaSeExiste)
+//let verificaSeExiste = numeros.includes(200)
+//console.log('includes', verificaSeExiste)
 
-let transformaString = numeros.join()
-console.log('join', transformaString)
+//let transformaString = numeros.join()
+//console.log('join', transformaString)
 // console.log(numeros)
 
-let ordenaLista = numeros.sort()
-console.log('sort', ordenaLista)
+//let ordenaLista = numeros.sort()
+//console.log('sort', ordenaLista)
 // console.log(numeros)
 
 

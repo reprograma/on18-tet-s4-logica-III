@@ -63,4 +63,19 @@ let filmes = [
     titulo: "Homem-Aranha: Sem Volta para Casa",
     genero: ["ação", "aventura"],
     ano: "2021", 
-  }] 
+  }
+] 
+
+function pesquisarFilme(titulo){
+  const buscarFilme = filmes.filter((item) => item.titulo.toUpperCase().includes(titulo.toUpperCase()));
+  console.table(buscarFilme)
+}    
+
+function pesquisaGenero(genero){  
+  const catalago = filmes.filter((item) => item.genero.includes(genero)); 
+  // || item.genero[0].includes(genero));
+  console.table(catalago)
+}
+
+pesquisarFilme("homem")
+pesquisaGenero("sci-fi")
