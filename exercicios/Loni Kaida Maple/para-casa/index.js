@@ -63,4 +63,19 @@ let filmes = [
     titulo: "Homem-Aranha: Sem Volta para Casa",
     genero: ["ação", "aventura"],
     ano: "2021", 
+  },
+  {
+    titulo: "Boku no Hero Academia the Movie 2: Heroes:Rising",
+    genero: ["ação", "aventura", "super poder", "comedia", "escola", "Shounen"],
+    ano: "2021", 
+  },
+  {
+    titulo: "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Movie: Orion no Ya",
+    genero: ["ação", "aventura", "comedia", "fantasia", "romance"],
+    ano: "2019", 
+  },
+  {
+    titulo: "Mobile Suit Gundam",
+    genero: ["mecha","ação"],
+    ano: "1979",
   }] 
