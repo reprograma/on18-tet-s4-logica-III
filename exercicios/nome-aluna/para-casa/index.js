@@ -61,6 +61,61 @@ let filmes = [
   },
   {
     titulo: "Homem-Aranha: Sem Volta para Casa",
-    genero: ["ação", "aventura"],
+    genero: ["ação", "aventura", "suspense"],
     ano: "2021", 
   }] 
+
+function buscarPorGenero(entrada) {
+  let listaPorGenero = []
+  filmes.forEach((filme) => {
+    if(typeof(filme.genero) == "string") {
+      let filmeEncontrado = filme.genero.toLowerCase().includes(entrada)
+      //filmeEncontrado ? listaPorGenero.push(filmeEncontrado) : null
+      if(filmeEncontrado) {
+        listaPorGenero.push(filme)
+      }
+    } else {
+      let filmeEncontradoNaArray = filme.genero.find((genero) => genero.toLowerCase().includes(entrada))
+      filmeEncontradoNaArray != undefined ? listaPorGenero.push(filme) : null
+    }
+  })  
+  return listaPorGenero
+}
+
+function buscarFilmes(entrada) {
+  if(typeof(entrada) == "string") {
+    entrada = entrada.toLowerCase()
+    const filmesPorTitulo = filmes.filter((filme) => filme.titulo.toLowerCase().includes(entrada))
+    const filmesPorGenero = buscarPorGenero(entrada)
+    if(filmesPorTitulo.length > 0 && filmesPorGenero.length > 0) {
+      console.log("--------Encontrados por título--------")
+      console.table(filmesPorTitulo)
+      console.log("--------Encontrados por gênero--------")
+      console.table(filmesPorGenero)
+    } else if(filmesPorTitulo.length > 0) {
+      console.log("--------Encontrados por título--------")
+      console.table(filmesPorTitulo)
+      console.log("--------Encontrados por gênero--------")
+      console.log('Nenhum filme encontrado por gênero')
+    } else if(filmesPorGenero.length > 0) {
+      console.log("--------Encontrados por título--------")
+      console.log('Nenhum filme encontrado por titulo')
+      console.log("--------Encontrados por gênero--------")
+      console.table(filmesPorGenero)
+    } else {
+      console.log('Nenhum filme foi encontrado')
+    }
+  } else {
+    console.log('Dado inválido')
+  }
+}
+
+// buscarFilmes('ni')
+// console.log()
+// console.log('---------------------------------------------------------------------------')
+// console.log()
+
+buscarFilmes('sUsp')
+
+// "Natália Salles".includes('lia')
+// ['Gabi', 'Grazi', 'Natália', 'Lu'].includes('lia')
