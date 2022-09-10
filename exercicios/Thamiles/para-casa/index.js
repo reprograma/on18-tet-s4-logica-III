@@ -65,9 +65,6 @@ let filmes = [
     ano: "2021", 
   }]
 
-  let pesquisaPorTitulo = ['Corpo Elétrico']
-  let pesquisaPorGenero = ['terror']
-
 
 // Pesquisa por titulo (retorno único)
 
