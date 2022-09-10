@@ -63,34 +63,30 @@ let filmes = [
     titulo: "Homem-Aranha: Sem Volta para Casa",
     genero: ["ação", "aventura"],
     ano: "2021", 
-  }] 
+  }]
+
+  let pesquisaPorTitulo = ['Corpo Elétrico']
+  let pesquisaPorGenero = ['terror']
 
 
-  function buscarFilmes(entrada) {
-    if(typeof(entrada) == 'strings') {
-      entrada = entrada.toLowerCase()
-    const filmesPorTitulo = filmes.filter((filme) => filme.titulo.toLocaleLowerCase().includes(entrada));
-    if(filmesPorTitulo .length > 0) {
-      console.log(filmesPorTitulo)
-    } else {
-      console.log('Dado innválido')
-    }
+// Pesquisa por titulo (retorno único)
 
-  }
+let filmeDesejado = 0
+let generoDesejado = 0
 
-  buscarFilmes()
+function pesquisarPorTitulo(filmeDesejado) {
+  const buscaPorTitulo = filmes.filter((filme) => {filme.titulo == filmeDesejado
+  return filme.titulo.includes(filmeDesejado)
+})
+console.log(buscaPorTitulo)
+}
+pesquisarPorTitulo('Homem')
+console.log("----------------------------------")
 
-  function pesquisarFilmesTitulo(titulo) {
-    for (let filme of filmes) {
-        let encontraPorTitulo = filmes.find(filme => filme.titulo == pesquisaPorTitulo);
-   console.log("Pesquisa por titulo:", encontraPorTitulo.titulo)
-     break;
-   }
-   }
-   pesquisarFilmesTitulo(pesquisaPorTitulo)
-  //  console.log("---------------------------------------------------")
-   
-  //  // // Pesquisa por gênero (retorno em lista)
-   
-  //   let encontraPorGenero = filmes.filter((filme) => filme.genero == pesquisaPorGenero);
-  //   console.log("Pesquisa por gênero: "+pesquisaPorGenero, encontraPorGenero)
+function pesquisarPorGenero(generoDesejado) {
+  const buscaPorGenero = filmes.filter((filme) => {filme.genero == generoDesejado
+  return filme.genero.includes(generoDesejado)
+})
+console.log(buscaPorGenero)
+}
+pesquisarPorGenero('susp')
